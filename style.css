@@ -1,0 +1,77 @@
+:root {
+    --main: #f2f2f2;
+    --non-number: #f8f8f8;
+    --number: #fdfdfd;
+    --numpad-hover: #1986db;
+    --number-hover: #dedede;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    background-color: var(--main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: aquamarine;
+}
+
+header {
+    overflow: hidden;
+    grid-area: header;
+    background-color: #1986db;
+}
+button {
+    border: none;
+    background-color: var(--main);
+}
+header button {
+    float: right;
+    padding: 4px 15px;
+    height: 27px;
+    text-align: center;
+    font-size: 1em;
+}
+header button:not(#close) {
+    width: 40px;
+}
+header span {
+    float: left;
+    padding: 5px 12px;
+    font-weight: 600;
+}
+button:hover {
+    background-color: var(--number-hover);
+}
+#close:hover {
+    background-color: #e81123;
+    color: white;
+}
+
+.layout-main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 27px auto 1fr;
+    grid-template-areas: 'header header' 'display history' 'numpad history';
+    background-color: #e81123;
+    width: 100%;
+    height: 100%;
+}
+.display {
+    grid-area: display;
+    background-color: orange;
+}
+.history-bar {
+    grid-area: history;
+    background-color: blue;
+}
+.numpad {
+    grid-area: numpad;
+    background-color: purple;
+}
