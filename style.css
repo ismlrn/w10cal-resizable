@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Trirong:wght@400;700&display=swap');
+/*
+    font-family: 'Audiowide',cursive;
+    font-family: 'Trirong',serif;
+    font-family: Arial, sans-serif;
+*/
 :root {
     --main: #f2f2f2;
     --non-number: #f8f8f8;
@@ -7,30 +13,66 @@
 }
 
 * {
+    font-family: "Segoe UI", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 12px;
     background-color: var(--main);
-    overflow: hidden;
     height: 100vh;
     width: 100vw;
-    background-color: aquamarine;
+    overflow: hidden;
+}
+.layout-main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 27px auto 1fr;
+    grid-template-areas: 'header header' 'display history' 'numpad history';
+}
+.header {
+
+    display: block;
+    grid-area: header;
+    width: 100vw;
+}
+/* for better result display: 46vh and numpad 50vh */
+.display-container {
+    grid-area: display;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 36vh;
+    min-height: 168px;
+}
+/* minimum width of window's calculator width is 240px and maximum width is 320px */
+.history-bar {
+    grid-area: history;
+    width: 19vw;
+    min-width: 240px;
+}
+.numpad {
+    grid-area: numpad;
+    height: 61vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 2px 2px;
+    background-color: var(--main);
 }
 
-header {
-    overflow: hidden;
-    grid-area: header;
-    background-color: #1986db;
-}
+/* button styles */
 button {
     border: none;
     background-color: var(--main);
 }
+button:hover {
+    background-color: var(--number-hover);
+}
+/* header styles */
 header button {
     float: right;
     padding: 4px 15px;
@@ -43,35 +85,119 @@ header button:not(#close) {
 }
 header span {
     float: left;
-    padding: 5px 12px;
+    padding: 7px 12px;
     font-weight: 600;
-}
-button:hover {
-    background-color: var(--number-hover);
 }
 #close:hover {
     background-color: #e81123;
     color: white;
 }
 
-.layout-main {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 27px auto 1fr;
-    grid-template-areas: 'header header' 'display history' 'numpad history';
-    background-color: #e81123;
-    width: 100%;
-    height: 100%;
+/* display styles */
+nav {
+    overflow: hidden;
+    height: 56px;
+}
+nav h3,
+button {
+    float: left;
+}
+#nav-menu {
+    font-size: 1em;
+    padding: 11px 11px;
+}
+#nav-h3 {
+    display: block;
+    font-size: 1.7em;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 4px;
+    margin: 0;
+}
+#nav-time-machine {
+    float: right;
+    padding: 9px 11px;
 }
 .display {
-    grid-area: display;
-    background-color: orange;
+    flex: 70%;
+    height: auto;
 }
-.history-bar {
-    grid-area: history;
-    background-color: blue;
+.display h1 {
+    direction: rtl;
+    font-weight: 600;
+    font-size: 5.5em;
+    padding: 10px 15px;
+    
 }
-.numpad {
-    grid-area: numpad;
-    background-color: purple;
+.memory-ctl {
+    max-width: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    flex: 30%;
+    min-height: 30px;
+    overflow: hidden;
+}
+.memory-ctl>div {
+    width: 80px;
+    margin: 0;
+    font-size: 1em;
+}
+.mem-btn {
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+}
+
+/* history-bar styles */
+.title-container {
+    display: block;
+    margin-left: 15px;
+    min-width: 180px;
+    overflow: hidden;
+}
+.htitles {
+    display: inline-block;
+    font-size: 1.3em;
+    margin: 12px 0px;
+    padding: 4px 15px;
+    font-weight: 600;
+}
+#hb-selected {
+    border-bottom: 4px solid var(--numpad-hover);
+    padding: 4px 0;
+}
+.hb-text {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 23px;
+}
+/* numpad styles */
+.number {
+    background-color: var(--number);
+    font-size: 2.3em;
+    font-weight: 600;
+}
+.non-number {
+    background-color: var(--non-number);
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.operations-hover {
+    font-size: 3.5em;
+}
+.operators {
+    font-size: 2.3em;
+}
+.x-operators {
+    font-size: 2.2em;
+}
+.bold-operators {
+    font-size: 1.7em;
+    font-weight: 600;
+}
+.operations-hover:hover {
+    background-color: var(--numpad-hover);
+    color: white;
 }

@@ -5,15 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="text/css" rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/39ef887eae.js"
-      crossorigin="anonymous"
-    ></script>
+
     <title>Calculator</title>
   </head>
   <body>
     <div class="layout-main">
-      <header>
+      <header class="header">
         <span class="title">Calculator</span>
         <div class="icons">
           <button id="close" title="Close">&#x2715;</button>
@@ -22,10 +19,61 @@
         </div>
       </header>
 
-      <div id="display"></div>
+      <div class="display-container">
+        <nav>
+          <button id="nav-menu" title="Open Navigation">
+            <img src="icons/menu.png" />
+          </button>
+          <h3 id="nav-h3">Standard</h3>
+        </nav>
+        <div class="display">
+          <h1>0</h1>
+        </div>
 
-      <div id="history-bar"></div>
-      <div id="numpad"></div>
+        <div class="memory-ctl">
+          <div>
+            <button
+              id="mc-btn"
+              class="mem-btn"
+              title="Clear all memory (Ctrl+L)"
+              disabled
+            >
+              MC
+            </button>
+          </div>
+
+          <div>
+            <button
+              id="mr-btn"
+              class="mem-btn"
+              title="Memory recall (Ctrl+R)"
+              disabled
+            >
+              MR
+            </button>
+          </div>
+
+          <div>
+            <button id="mp-btn" class="mem-btn" title="Memory add (Ctrl+P)">
+              M+
+            </button>
+          </div>
+          <div>
+            <button
+              id="mm-btn"
+              class="mem-btn"
+              title="Memory subtract (Ctrl+Q)"
+            >
+              M-
+            </button>
+          </div>
+          <div>
+            <button id="ms-btn" class="mem-btn" title="Memory store (Ctrl+M)">
+              MS
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
