@@ -173,31 +173,3 @@ button {
     font-weight: 700;
     margin-top: 23px;
 }
-/* numpad styles */
-.number {
-    background-color: var(--number);
-    font-size: 2.3em;
-    font-weight: 600;
-}
-.non-number {
-    background-color: var(--non-number);
-    font-size: 1.5em;
-    font-weight: 300;
-}
-.operations-hover {
-    font-size: 3.5em;
-}
-.operators {
-    font-size: 2.3em;
-}
-.x-operators {
-    font-size: 2.2em;
-}
-.bold-operators {
-    font-size: 1.7em;
-    font-weight: 600;
-}
-.operations-hover:hover {
-    background-color: var(--numpad-hover);
-    color: white;
-}
