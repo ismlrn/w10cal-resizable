@@ -190,6 +190,13 @@ button {
 .operators {
     font-size: 2.3em;
 }
+.x-operators {
+    font-size: 2.2em;
+}
+.bold-operators {
+    font-size: 1.7em;
+    font-weight: 600;
+}
 .operations-hover:hover {
     background-color: var(--numpad-hover);
     color: white;
