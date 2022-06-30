@@ -127,7 +127,6 @@ button {
     font-weight: 600;
     font-size: 5.5em;
     padding: 10px 15px;
-    
 }
 .memory-ctl {
     max-width: 400px;
@@ -191,7 +190,7 @@ button {
     font-size: 2.3em;
 }
 .x-operators {
-    font-size: 2.2em;
+    font-size: 2em;
 }
 .bold-operators {
     font-size: 1.7em;
@@ -201,4 +200,3 @@ button {
     background-color: var(--numpad-hover);
     color: white;
 }
-
